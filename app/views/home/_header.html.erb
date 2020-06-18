@@ -1,13 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Master Plan</a>
+<nav class="navbar navbar-expand-lg">
+<%= link_to "Master Plan", root_path, class: "navbar-brand" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto">
       <% if user_signed_in? %>
-        Welcome <%= current_user.email %>.
-        <%= link_to 'Edit Profile', edit_user_registration_path, class: "nav-item nav-link" %>
+        <%= link_to "Meal Plans", meal_plans_path, class: "nav-item nav-link" %>
+        <%= link_to "Recipes", recipes_path, class: "nav-item nav-link" %>
+        <%= link_to 'Profile', edit_user_registration_path, class: "nav-item nav-link" %>
         <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-item nav-link" %>
       <% else %>
         <%= link_to 'Sign Up', new_user_registration_path, class: "nav-item nav-link" %>

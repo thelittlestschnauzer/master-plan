@@ -1,0 +1,19 @@
+<div class="title-container">
+  <h2>Recipes</h2>
+</div>
+
+<div id="recipes" class="card-deck">
+  <% @recipes.each do |recipe| %>
+  <div class="recipe card">
+  
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h3><%= link_to recipe.title, recipe_path(recipe)  %></h3>
+      <p class="card-text"><%= truncate(recipe.description, length: 150) %> </p>
+      <p class="card-text"><small class="text-muted">Serves: </small></p>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<%= link_to "Add Recipe", new_recipe_path %>
